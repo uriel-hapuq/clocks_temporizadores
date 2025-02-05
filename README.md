@@ -10,7 +10,7 @@ Estes projetos demonstram o controle de LEDs e a leitura de um botão usando o m
 
 Para clonar este repositório, abra um terminal e execute o comando:
 
-git clone [https://github.com/seu-usuario/nome-do-projeto.git](https://github.com/uriel-hapuq/clocks_temporizadores.git)
+git clone https://github.com/uriel-hapuq/clocks_temporizadores.git
 
 OU baixe o arquivo .zip no GitHub
 
