@@ -50,26 +50,24 @@ int main() {
 }
 //função callback do alarm
 int64_t callback(alarm_id_t id, void *user_data) {
-    
-    if(sequence == 0) {
+   switch (sequence)
+    {
+    case 0:
         gpio_put(RED_LED,0);
-        printf("%d\n", sequence);
         sequence++;
         add_alarm_in_ms(3000, callback, NULL, false);
-    }
-    else if(sequence == 1) {
+        break;
+    case 1:
         gpio_put(BLUE_LED,0);
-        printf("%d\n", sequence);
         sequence++;
         add_alarm_in_ms(3000, callback, NULL, false); //ultima chamada 
-    }
-    else if(sequence == 2) {
+        break;
+    case 2:
         gpio_put(GREEN_LED,0);
-        printf("%d\n", sequence);
         sequence = 0;
         is_active = false; // sequencia finaliza 
+        break;
     }
-    
     return 0;
 }
 
