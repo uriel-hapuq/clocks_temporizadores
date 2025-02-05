@@ -46,7 +46,8 @@ pico_enable_stdio_usb(temporizador_one_shot 1)
 
 # Add the standard library to the build
 target_link_libraries(temporizador_one_shot
-        pico_stdlib)
+        pico_stdlib
+        hardware_timer)
 
 # Add the standard include files to the build
 target_include_directories(temporizador_one_shot PRIVATE
