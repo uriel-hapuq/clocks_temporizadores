@@ -1,4 +1,0 @@
-[wokwi]
-version = 1
-firmware = 'build/temporizador_one_shot.uf2'
-elf = 'build/temporizador_one_shot.elf'
