@@ -16,18 +16,24 @@ volatile int led_on = RED_LED; // inicia no led vermelho conforme enunciado
 bool callback_timer(struct repeating_timer *t){
         //if..else vai ser sempre executado 
         //pois led_on = RED sempre
-        if(led_on == RED_LED){
+       switch (led_on)
+        {
+        case RED_LED:
             led_on = YELLOW_LED;
             gpio_put(RED_LED, 0); //desliga led vermelho
             gpio_put(YELLOW_LED, 1); //acende led amarelo
-        }else if(led_on == YELLOW_LED){
+            break;
+        
+        case YELLOW_LED:
             led_on = GREEN_LED;
             gpio_put(YELLOW_LED, 0); //desliga led amarelo
             gpio_put(GREEN_LED, 1); //acende led verde
-        }else if(led_on == GREEN_LED){
+            break;
+        case GREEN_LED:
             led_on = RED_LED;
             gpio_put(GREEN_LED, 0); //desliga led verde
             gpio_put(RED_LED, 1); //acende led vermelho
+            break;
         }
         return true; //mantem o timer ativo
 }
