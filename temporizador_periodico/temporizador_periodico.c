@@ -14,8 +14,6 @@ volatile int led_on = RED_LED; // inicia no led vermelho conforme enunciado
 
 // função callback da função repetidora
 bool callback_timer(struct repeating_timer *t){
-    
-        printf("passou callback\n");
         //if..else vai ser sempre executado 
         //pois led_on = RED sempre
         if(led_on == RED_LED){
